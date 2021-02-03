@@ -3,6 +3,10 @@ df = pd.read_csv (r'gs://test-bucket-13/Input/Adress.csv')
 df.to_json (r'gs://test-bucket-13/output/temp/adress.json')
 
 
+google-cloud-storage==1.28.1
+pandas==1.0.3
+smart-open==2.0.0
+
 
 python3 csv-json-pandas-dataflow.py \ --project test1\ --runner DataflowRunner --staging_location 
 gs://test-bucket-13/\ --temp_location gs://test-bucket-13/\ --template_location gs://test-bucket-13/MyTemplate\ --save_main_session True --input  gs:/
