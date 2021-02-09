@@ -71,4 +71,13 @@ if __name__ == '__main__':
 
 
 
+    
+      with open(self.input_path) as fin:
+            s = fin.read()
+            s = s.replace('\t','')
+            s = s.replace('\n','')
+            s = s.replace(',}','}')
+            s = s.replace(',]',']')
+            data = json.loads(s)
+            product = data.get('product')
 
