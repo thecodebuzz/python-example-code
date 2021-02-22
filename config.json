@@ -1,0 +1,10 @@
+{
+  "jobName": "thecodebuzz",
+  "parameters": {
+    "region": "test"
+  },
+  "environment": {
+    "maxWorkers": "10",
+    "tempLocation": "gs://test-bucket/"
+  }
+}
