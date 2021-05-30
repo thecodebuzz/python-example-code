@@ -8,9 +8,16 @@ pandas==1.0.3
 smart-open==2.0.0
 
 
-python3 csv-json-pandas-dataflow.py \ --project test1\ --runner DataflowRunner --staging_location 
-gs://test-bucket-13/\ --temp_location gs://test-bucket-13/\ --template_location gs://test-bucket-13/MyTemplate\ --save_main_session True --input  gs:/
-/test-bucket-13/Input/Adress.csv  --output gs://test-bucket-13/output/temp/addressfromgcp.json
+  
+      with open(self.input_path) as fin:
+            s = fin.read()
+            s = s.replace('\t','')
+            s = s.replace('\n','')
+            s = s.replace(',}','}')
+            s = s.replace(',]',']')
+            data = json.loads(s)
+            product = data.get('product')
+
   
   
  
@@ -71,13 +78,4 @@ if __name__ == '__main__':
 
 
 
-    
-      with open(self.input_path) as fin:
-            s = fin.read()
-            s = s.replace('\t','')
-            s = s.replace('\n','')
-            s = s.replace(',}','}')
-            s = s.replace(',]',']')
-            data = json.loads(s)
-            product = data.get('product')
-
+  
